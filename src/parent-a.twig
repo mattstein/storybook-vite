@@ -1,0 +1,12 @@
+{% set enableInclude = enableInclude ?? false %}
+
+<h1>{{ title }}</h1>
+
+<p>{{ detail }}</p>
+
+{{ enableInclude ? 'enableInclude = true' : 'enableInclude = false' }}
+
+{% if enableInclude %}
+  {# Nothing here is rendered even when `enableInclude` is `true` 🤔 #}
+  {% include "child.twig" %}
+{% endif %}
